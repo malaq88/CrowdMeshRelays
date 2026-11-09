@@ -1,8 +1,10 @@
 # CrowdMesh Node
 
-Firmware para **ESP32 Dev Module** (sem display) — nó completo com BLE + mesh E2E (Nexus **v3**) + LED.
+**Idioma:** [Português (BR)](README.md) · [English (US)](README.en.md)
 
-Documentação completa: [README (pt-BR)](../../README.md) · [README (en-US)](../../README.en.md)
+Firmware para **ESP32 Dev Module** (sem display): nó completo com BLE + mesh E2E (Nexus **v3**) + LED.
+
+Documentação do repositório: [README (pt-BR)](../README.md) · [README (en-US)](../README.en.md)
 
 **Diferença vs outros sketches em `Relays/`:** mesmo protocolo do CYD, sem TFT (só LED de status).
 
@@ -46,7 +48,7 @@ Logs úteis da fila BLE: `[ble] queued` / `[ble] flushed`.
 ## Uso
 
 1. Instale NimBLE-Arduino.
-2. Abra `Relays/CrowdMeshNode/CrowdMeshNode.ino` e grave.
+2. Abra `CrowdMeshNode/CrowdMeshNode.ino` e grave.
 3. No Companion, conecte em `CrowdMesh-Node-XXXX`.
 4. **Regrave também CYD e BroadCast** com Nexus v3 (incompatível com v2).
 

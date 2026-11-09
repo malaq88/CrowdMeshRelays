@@ -1,8 +1,10 @@
 # CrowdMesh BroadCast (ESP8266 Relay)
 
+**Idioma:** [Português (BR)](README.md) · [English (US)](README.en.md)
+
 Firmware de **repetidor ESP-NOW** para a placa **ESP8266 V3 com OLED 0,96"**.
 
-**Diferença vs outros sketches em `Relays/`:** sem BLE e sem E2E — só reencaminha / guarda ciphertext (Nexus **v3**) para estender a malha. CYD/Node são os nós que falam com o celular.
+**Diferença vs outros sketches em `Relays/`:** sem BLE e sem E2E: só reencaminha / guarda ciphertext (Nexus **v3**) para estender a malha. CYD/Node são os nós que falam com o celular.
 
 ```text
 Celular ──BLE──► ESP32 ──ESP-NOW──► ESP8266 Relay ──ESP-NOW──► outro ESP32
@@ -38,20 +40,20 @@ Board sugerida: **NodeMCU 1.0 (ESP-12E Module)**
 6. Anuncia-se periodicamente como `Relay-XXXX` (HELLO sem chave E2E).
 7. Mostra no OLED: ID, canal, contagem de forwards, último pacote.
 
-**Não** descriptografa mensagens — relays só veem ciphertext (E2E nos ESP32).
+**Não** descriptografa mensagens. Relays só veem ciphertext (E2E nos ESP32).
 
 ## Como gravar
 
-1. Abra `Relays/CrowdMeshBroadCast/CrowdMeshBroadCast.ino` na Arduino IDE.
+1. Abra `CrowdMeshBroadCast/CrowdMeshBroadCast.ino` na Arduino IDE.
 2. Selecione a placa ESP8266 correta e a porta.
 3. Upload.
 4. Serial 115200: deve aparecer `NODE ID` e `[ready] store-and-forward CrowdMesh v3`.
 
-Documentação completa: [README (pt-BR)](../../README.md) · [README (en-US)](../../README.en.md)
+Documentação do repositório: [README (pt-BR)](../README.md) · [README (en-US)](../README.en.md)
 
 ## Compatibilidade com CYD / Node
 
-- Use firmwares CrowdMesh **v3** (store + ACK) nos ESP32 — **não** mistura com v2.
+- Use firmwares CrowdMesh **v3** (store + ACK) nos ESP32. **Não** mistura com v2.
 - Todos no **mesmo canal**. Se a malha não atravessar o relay, alinhe `WIFI_CHANNEL` aqui com o canal real do ESP32 (Serial / Wireshark / teste com canal 1–11).
 
 Nos ESP32 atuais o STA costuma ficar no canal 1 após `WiFi.mode(WIFI_STA)`.
